@@ -1,0 +1,7 @@
+- bareista paksummat, vähemmän bareja per ruutu
+- kuukausivalikko
+- Helsinki kartta
+- Lähde-osio
+- Footeriin mainosvideo
+- Karttaan hover toiminto
+- Kuolemat tänään luku

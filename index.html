@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tartuntatiedot.fi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.3/leaflet.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="css/hover.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.3/leaflet.js"></script>
+</head>
+<body>
+
+<header>
+    <h1><a href="">Tartuntatiedot.fi</a></h1>
+    <ul id="nav">
+        <li><a href="#tilastot" class="hvr-wobble-skew">Tilastot</a></li>
+        <li><a href="#about" class="hvr-wobble-skew">Lähteet</a></li>
+        <li><a href="#about" class="hvr-wobble-skew">Sivustosta</a></li>
+        <li><a href="#contact" class="hvr-wobble-skew">Yhteystiedot</a></li>
+    </ul>
+</header>
+<main>
+    <section id="tilastot">
+        <!--<div class="flex-container">
+            <div class="flex-child-map" id="map"></div>
+        </div>-->
+        <div class="flex-container">
+            <div class="graph-charts-wrap">
+                <figure class="chart-wrapper">
+                    <h3 id="cumulativeLineChartHeader">Vahvistetut tartunnat Suomessa: </h3>
+                    <h3 id="confirmedCasesByDateLineChartHeader">Tartunnat viimeisen vuorokauden aikana: </h3>
+
+                    <canvas id="cumulativeLineChart" ></canvas>
+                    <canvas id="confirmedCasesByDateLineChart"></canvas>
+                    <br>
+                    <button id="cumulativeCasesButton" class="button">Kumulatiivinen</button><button id="dateCasesButton" class="button">Päiväkohtainen</button>
+                </figure>
+                <figure class="chart-wrapper">
+                    <h3 id="cumulativeDeathsHeader">Vahvistetut kuolemat Suomessa: </h3>
+                    <h3 id = "deathsByDateHeader">Kuolemat viimeisen vuorokauden aikana: </h3>
+                    <canvas id="deathCasesCumulativeLineChart"></canvas>
+                    <canvas id="deathCasesByDateLineChart"></canvas>
+                    <br>
+                    <button id="cumulativeDeathsButton">Kumulatiivinen</button><button id="dateDeathsButton">Päiväkohtainen</button>
+                </figure>
+
+            </div>
+
+            <div class="flex-child-map" id="map"></div>
+
+            <div class="graph-charts-wrap">
+                <div class="flex-child-info" id="info"></div>
+                <figure class="chart-wrapper">
+                    <h3>Vahvistetut tartunnat sairaanhoitopiireittäin</h3>
+                    <canvas id="confirmedCasesByDistrictBarChart"></canvas>
+                </figure>
+                <figure class="chart-wrapper">
+                    <h3>Vahvistetut kuolemat sairaaloittain</h3>
+                    <canvas id="deathCasesByDistrictBarChart"></canvas>
+                </figure>
+            </div>
+            </div>
+
+    </section>
+    <section id="about">
+        <h2>Sivustosta</h2>
+        <div class="about-figures-container">
+            <ul>
+                <li>
+                    <figure width="150" height="200" class="about-figure">
+                        <a href="assets/corona.png"><img src="assets/corona.png"></a>
+                        <figcaption>
+                            <h3>COVID-19 tilanne</h3>
+                            <p>Tartuntatiedot.fi on Metropolian opiskelijatyönä tehty sovellus, jonka tarkoituksena on jakaa ajankohtaista tietoa Suomen koronatilanteesta.</p>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure width="150" height="200" class="about-figure">
+                        <a href="assets/hospital.png"><img src="assets/hospital.png"></a>
+                        <figcaption>
+                            <h3>Tieto sairaanhoitopiireittäin</h3>
+                            <p> Tartuntatiedot on ryhmitelty sairaanhoitopiireittäin.</p>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li>
+                    <figure width="150" height="200" class="about-figure">
+                        <a href="assets/spread.png"><img src="assets/spread.png"></a>
+                        <figcaption>
+                            <h3>Leviäminen</h3>
+                            <p>Sovellus mahdollistaa aiheeseen liittyvän uutisvirran seuraamisen.</p>
+                        </figcaption>
+                    </figure>
+                </li>
+            </ul>
+         </div>
+        <h2>Lähteet</h2>
+        <p class="about-desctiption">
+            Sivuston pohjana on käytetty Metropolian opiskelijaprojektia. Alkuperäiseen lähdekoodiin pääset alla olevasta linkistä.<br><br>
+            Sivustosta löytyy sekä yleisiä että päiväkohtaisia tilastotietoja kokonaistartuntatilanteesta.<br><br>
+            Sivustomme hyödyntää THL:än julkaisemia ja HS:än kokoamia avoimen datan rajapintoja COVID-19 tilanteesta. Tiedot päivittyvät sivuillemme
+            kerran päivässä.<br><br>
+            <a href="https://github.com/HS-Datadesk/koronavirus-avoindata" class="datalink">HS-Datadesk</a><a href="https://github.com/kermara/MediatekniikatProjekti/" class="datalink">GitHub</a><br><br>
+        </p>
+    </section>
+
+    <section id="contact">
+        <h2>Yhteystiedot</h2>
+        <p class="contact-desctiption"></p>
+        <div class="contact-figures-container">
+            <ul>
+                <li><figure width="150" height="200" class="contact-figure">
+                    <a href="assets/maksim.jpg"><img src="assets/maksim.jpg"></a>
+                    <figcaption>
+                        <h3>Maksim Ilmast</h3>
+                    </figcaption>
+                </figure>
+                </li>
+                <li>
+                    <figure width="150" height="200" class="contact-figure">
+                        <a href="assets/samuel.jpg"><img src="assets/samuel.jpg"></a>
+                        <figcaption>
+                            <h3>Samuel Aitamaa</h3>
+                            <p>samuel.aitamaa@tartuntatiedot.fi</p>
+                        </figcaption>
+                    </figure>
+                </li>
+            </ul>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <ul class="footer-social">
+        <li><a href="http://facebook.com" target="_blank" class="fa fa-facebook footer-social-icon"></a></li>
+        <li><a href="http://twitter.com" target="_blank" class="fa fa-twitter footer-social-icon"></a></li>
+    </ul>
+    <p class="footer-copyright">Copyright © 2020</p>
+    <ul id="navfooter">
+        <li><a href="#tilastot" class="hvr-wobble-skew">Tilastot</a></li>
+        <li><a href="#about" class="hvr-wobble-skew">Lähteet</a></li>
+        <li><a href="#about" class="hvr-wobble-skew">Sivustosta</a></li>
+        <li><a href="#contact" class="hvr-wobble-skew">Yhteystiedot</a></li>
+    </ul>
+</footer>
+
+
+<script src="js/map.js"></script>
+<script src="js/chart.js"></script>
+</body>
+</html>
